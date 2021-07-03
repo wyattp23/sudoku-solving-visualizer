@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.row {
+  display: block;
+}
+
 .cell {
   display: inline-block;
   height: 50px;
