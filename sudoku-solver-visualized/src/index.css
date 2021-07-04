@@ -11,7 +11,7 @@
   height: 50px;
   width: 50px;
   border-style: solid;
-  margin: 0.5em;
+  border-color: bisque;
   text-align: center;
   vertical-align: top;
 }
