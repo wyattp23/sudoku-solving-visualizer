@@ -1,18 +1,32 @@
-const solve = (board) => {
+export const solve = (board, animations) => {
     var [row, col] = findEmptyCell(board);
     var maxCellValue = 9;
 
     if (row  == -1 && col == -1) {
-        return board; //Board is complete.
+        return animations; //Board is complete.
     }
 
     for (let num = 1; num <= maxCellValue; num++) {
         if (numPlacementIsLegal(board, row, col, num)) {
             board[row][col] = num;
-            if (solve(board)) return board;
+            animations.push(
+                {
+                    cell: `cell[${row}][${col}]`,
+                    number: num,
+                    class: `cell-solution`
+                }
+            )
+            if (solve(board, animations)) return animations;
 
             // Remove the value if it does not lead to a solved board
             board[row][col] = 0;
+            animations.push(
+                {
+                    cell: `cell[${row}][${col}]`,
+                    number: 0,
+                    class: `cell-discard`
+                }
+            )
         }
     }
 
@@ -32,19 +46,20 @@ const findEmptyCell = (board) => {
 }
 
 const numPlacementIsLegal = (board, row, col, num) => {
+    var blockSize = 3;
     var blockRowIndex = row - (row % blockSize);
     var blockColIndex = col - (col % blockSize);
-    var blockSize = 3;
+    
 
     //Check if number is already in the block
     for (let i = blockRowIndex; i < blockRowIndex + blockSize; i++) {
         for (let j = blockColIndex; j < blockColIndex + blockSize; j++) {
-            if (board[i][j] == num) return false;
+            if (board[i][j] === num) return false;
         }
     }
 
     for (let i = 0; i < board.length; i++) {
-        if (board[i][col] == num || board[row][i] == num) return false;
+        if (board[i][col] === num || board[row][i] === num) return false;
     }
 
     return true;

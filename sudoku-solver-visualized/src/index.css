@@ -1,17 +1,62 @@
 #board {
   text-align: center;
+  width: 500px;
+  height: 500px;
+  padding: 0;
 }
 
 .row {
   display: block;
+  width: 100%;
 }
 
 .cell {
   display: inline-block;
   height: 50px;
   width: 50px;
-  border-style: solid;
-  border-color: bisque;
   text-align: center;
   vertical-align: top;
+  background-color: lightgrey;
+  margin: -4px;
+  padding: 0;
+}
+
+.cell:nth-child(9) {
+  border-style: solid;
+  border-top: 0;
+  border-right-color: black;
+  border-bottom: 0;
+  border-left: 0;
+}
+
+.cell:nth-child(1) {
+  border-style: solid;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-left-color: black;
+}
+
+.cell-solution {
+  /* animation-name: cellSolution;
+  animation-duration: 100ms;
+  animation-iteration-count: 1; */
+  background-color: lightgreen;
+}
+
+.cell-discard {
+  /* animation-name: cellDiscard;
+  animation-duration: 100ms;
+  animation-iteration-count: 1; */
+  background-color: lightpink;
+}
+
+@keyframes cellSolution {
+  from {background-color: lightgrey;}
+  to {background-color: green;}
+}
+
+@keyframes cellDiscard {
+  from {background-color: red;}
+  to {background-color: lightgrey;}
 }
