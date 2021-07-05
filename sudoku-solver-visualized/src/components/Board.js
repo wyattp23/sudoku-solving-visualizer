@@ -1,7 +1,7 @@
 import { useDebugValue } from 'react';
 import Cell from './Cell.js'
 
-const Board = (props) => {
+export const Board = (props) => {
     return (
         <div id="board">
             {props.values.map((values, i) => (
@@ -14,5 +14,3 @@ const Board = (props) => {
         </div>
     );
 }
-
-export default Board

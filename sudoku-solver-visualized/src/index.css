@@ -14,6 +14,7 @@
   display: inline-block;
   height: 50px;
   width: 50px;
+  line-height: 50px;
   text-align: center;
   vertical-align: top;
   background-color: lightgrey;
@@ -38,25 +39,9 @@
 }
 
 .cell-solution {
-  /* animation-name: cellSolution;
-  animation-duration: 100ms;
-  animation-iteration-count: 1; */
   background-color: lightgreen;
 }
 
 .cell-discard {
-  /* animation-name: cellDiscard;
-  animation-duration: 100ms;
-  animation-iteration-count: 1; */
   background-color: lightpink;
-}
-
-@keyframes cellSolution {
-  from {background-color: lightgrey;}
-  to {background-color: green;}
-}
-
-@keyframes cellDiscard {
-  from {background-color: red;}
-  to {background-color: lightgrey;}
 }

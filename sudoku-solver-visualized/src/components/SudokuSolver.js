@@ -1,4 +1,5 @@
-import Board from './Board.js'
+import { Board } from './Board.js'
+import { Slider } from './Slider.js'
 import { solve } from './../algorithms/solve.js'
 import { useState } from 'react'
 
@@ -8,6 +9,7 @@ const SudokuSolver = () => {
     return (
         <div>
             <button onClick={() => animateSolution(boardValues)}>solve</button>
+            <Slider />
             <Board values={boardValues}/>
         </div>
 
@@ -26,24 +28,26 @@ const defaultBoardValues = [
     [0, 0, 5, 2, 0, 6, 3, 0, 0]
 ]
 
-const animateSolution = (board) => {
+async function animateSolution(board) {
     var animations = solve(board, []);
-    console.log("ANIMATIONS: ", animations);
 
     if (animations) {
-        animations.forEach((anim, i) => {
-            setTimeout(() => {
-                document.getElementById(anim.cell).className = `cell ${anim.class}`;
-                document.getElementById(anim.cell).innerText = anim.number == 0 ? "" : anim.number;
-            }, 50 * i)
-    
-            // cell.class = anim.class;
-            // cell.num = anim.number;
-            return;
-        })
+        for (const anim of animations) {
+            var animSpeed = document.getElementById("animSpeed").value;
+            await animate(anim, animSpeed);
+        }
+        return;
     }
+}
 
-    console.log("ANIMATIONS == FALSE");
+const animate = (anim, animSpeed) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            document.getElementById(anim.cell).className = `cell ${anim.class}`;
+            document.getElementById(anim.cell).innerText = anim.number == 0 ? "" : anim.number;
+            resolve();
+        }, animSpeed)
+    })
 }
 
 export default SudokuSolver
