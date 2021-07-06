@@ -9,6 +9,7 @@ const SudokuSolver = () => {
     return (
         <div>
             <button onClick={() => animateSolution(boardValues)}>solve</button>
+            <button onClick={() => setBoardValues(defaultBoardValues)}>reset</button>
             <Slider />
             <Board values={boardValues}/>
         </div>
@@ -34,6 +35,7 @@ async function animateSolution(board) {
     if (animations) {
         for (const anim of animations) {
             var animSpeed = document.getElementById("animSpeed").value;
+            console.log("animSpeed: ", animSpeed**2);
             await animate(anim, animSpeed);
         }
         return;
@@ -43,10 +45,10 @@ async function animateSolution(board) {
 const animate = (anim, animSpeed) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            document.getElementById(anim.cell).className = `cell ${anim.class}`;
+            document.getElementById(anim.cell).style.backgroundColor = anim.color;
             document.getElementById(anim.cell).innerText = anim.number == 0 ? "" : anim.number;
             resolve();
-        }, animSpeed)
+        }, animSpeed**2)
     })
 }
 

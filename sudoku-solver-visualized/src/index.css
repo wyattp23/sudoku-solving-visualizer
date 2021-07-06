@@ -20,28 +20,22 @@
   background-color: lightgrey;
   margin: -4px;
   padding: 0;
+  border-style: solid;
+  border-color: grey;
 }
 
-.cell:nth-child(9) {
-  border-style: solid;
-  border-top: 0;
+.cell-right-border {
   border-right-color: black;
-  border-bottom: 0;
-  border-left: 0;
 }
 
-.cell:nth-child(1) {
-  border-style: solid;
-  border-top: 0;
-  border-right: 0;
-  border-bottom: 0;
+.cell-left-border {
   border-left-color: black;
 }
 
-.cell-solution {
-  background-color: lightgreen;
+.cell-top-border {
+  border-top-color: black;
 }
 
-.cell-discard {
-  background-color: lightpink;
+.cell-bottom-border {
+  border-bottom-color: black;
 }

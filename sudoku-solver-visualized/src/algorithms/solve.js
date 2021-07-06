@@ -13,7 +13,7 @@ export const solve = (board, animations) => {
                 {
                     cell: `cell[${row}][${col}]`,
                     number: num,
-                    class: `cell-solution`
+                    color: "green"
                 }
             )
             if (solve(board, animations)) return animations;
@@ -24,7 +24,7 @@ export const solve = (board, animations) => {
                 {
                     cell: `cell[${row}][${col}]`,
                     number: 0,
-                    class: `cell-discard`
+                    color: "red"
                 }
             )
         }
