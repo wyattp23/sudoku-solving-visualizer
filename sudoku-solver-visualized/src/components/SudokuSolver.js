@@ -1,20 +1,7 @@
 import { Board } from "./Board.js";
 import { Slider } from "./Slider.js";
-import { solve } from "./../algorithms/solve.js";
+import { animateSolution } from "../algorithms/animate.js";
 import { useState } from "react";
-
-const SudokuSolver = () => {
-  const [boardValues, setBoardValues] = useState(defaultBoardValues);
-
-  return (
-    <div>
-      <button onClick={() => animateSolution(boardValues)}>solve</button>
-      <button onClick={() => setBoardValues(defaultBoardValues)}>reset</button>
-      <Slider />
-      <Board values={boardValues} />
-    </div>
-  );
-};
 
 const defaultBoardValues = [
   [3, 0, 6, 5, 0, 8, 4, 0, 0],
@@ -28,28 +15,17 @@ const defaultBoardValues = [
   [0, 0, 5, 2, 0, 6, 3, 0, 0],
 ];
 
-async function animateSolution(board) {
-  var animations = solve(board, []);
+const SudokuSolver = () => {
+  const [boardValues, setBoardValues] = useState(defaultBoardValues);
 
-  if (animations) {
-    for (const anim of animations) {
-      var animSpeed = document.getElementById("animSpeed").value;
-      console.log("animSpeed: ", animSpeed ** 2);
-      await animate(anim, animSpeed);
-    }
-    return;
-  }
-}
-
-const animate = (anim, animSpeed) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      document.getElementById(anim.cell).style.backgroundColor = anim.color;
-      document.getElementById(anim.cell).innerText =
-        anim.number == 0 ? "" : anim.number;
-      resolve();
-    }, animSpeed ** 2);
-  });
+  return (
+    <div>
+      <button onClick={() => animateSolution(boardValues)}>solve</button>
+      <button onClick={() => setBoardValues(defaultBoardValues)}>reset</button>
+      <Slider />
+      <Board values={boardValues} />
+    </div>
+  );
 };
 
 export default SudokuSolver;
