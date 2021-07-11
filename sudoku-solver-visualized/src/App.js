@@ -1,10 +1,8 @@
-import './App.css';
-import SudokuSolver from './components/SudokuSolver';
+import "./App.css";
+import SudokuSolver from "./components/SudokuSolver";
 
 function App() {
-  return (
-    <SudokuSolver />
-  );
+  return <SudokuSolver />;
 }
 
 export default App;
