@@ -24,18 +24,12 @@ const SudokuSolver = () => {
     if (animations) {
       for (const anim of animations) {
         var animSpeed = document.getElementById("animSpeed").value;
-        console.log("animSpeed: ", animSpeed ** 2);
         await animateCell(anim, animSpeed);
       }
-      console.log("BROKE OUT");
-      setBoardValues(defaultBoardValues);
-      return;
     }
   }
   
   const animateCell = (anim, animSpeed) => {
-    console.log("IN ANIMATE CELL");
-
     return new Promise((resolve) => {
       setTimeout(() => {
         document.getElementById(anim.cell).style.backgroundColor = anim.color;
