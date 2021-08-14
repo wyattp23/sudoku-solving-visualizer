@@ -17,17 +17,12 @@ const defaultBoardValues = [
 
 const SudokuSolver = () => {
   const [boardValues, setBoardValues] = useState(defaultBoardValues);
-  var continueAnimation = true;
 
   async function animateSolution(board) {
     var animations = solve(board);
   
     if (animations) {
       for (const anim of animations) {
-        if (!continueAnimation) {
-          setBoardValues(defaultBoardValues);
-          break;
-        }
         var animSpeed = document.getElementById("animSpeed").value;
         console.log("animSpeed: ", animSpeed ** 2);
         await animateCell(anim, animSpeed);
@@ -40,27 +35,21 @@ const SudokuSolver = () => {
   
   const animateCell = (anim, animSpeed) => {
     console.log("IN ANIMATE CELL");
-    console.log(`contine? ... ${continueAnimation}`);
 
     return new Promise((resolve) => {
-      if (continueAnimation) {
-        setTimeout(() => {
-          document.getElementById(anim.cell).style.backgroundColor = anim.color;
-          document.getElementById(anim.cell).innerText =
-            anim.number == 0 ? "" : anim.number;
-          resolve();
-        }, animSpeed ** 2);
-      }
-      else {
+      setTimeout(() => {
+        document.getElementById(anim.cell).style.backgroundColor = anim.color;
+        document.getElementById(anim.cell).innerText =
+          anim.number == 0 ? "" : anim.number;
         resolve();
-      }
+      }, animSpeed ** 2);
     });
   };  
 
   return (
     <div>
       <button onClick={() => animateSolution(boardValues)}>solve</button>
-      <button onClick={() => continueAnimation = false}>reset</button>
+      <button >reset</button>
       <Slider />
       <Board values={boardValues} />
     </div>
