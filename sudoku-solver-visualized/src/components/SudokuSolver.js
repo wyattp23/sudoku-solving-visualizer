@@ -20,7 +20,7 @@ const SudokuSolver = () => {
   var continueAnimation = true;
 
   async function animateSolution(board) {
-    var animations = solve(board, []);
+    var animations = solve(board);
   
     if (animations) {
       for (const anim of animations) {

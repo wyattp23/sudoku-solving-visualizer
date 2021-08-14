@@ -1,4 +1,4 @@
-export const solve = (board, animations) => {
+export const solve = (board, animations=[]) => {
   var [row, col] = findEmptyCell(board);
   var maxCellValue = 9;
 
