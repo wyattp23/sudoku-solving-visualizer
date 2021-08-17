@@ -4,12 +4,12 @@ import { solve } from "../algorithms/solve.js";
 import { useState } from "react";
 import {unsolvedBoards} from "../unsolvedBoards";
 
-const defaultBoardValues = unsolvedBoards[1];
+const defaultBoardValues = unsolvedBoards[0];
 
 const SudokuSolver = () => {
   const [boardValues, setBoardValues] = useState(convertBoardArrayToObjects(defaultBoardValues));
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
-  const [currentBoardIdx, setCurrentBoardIdx] = useState(1);
+  const [currentBoardIdx, setCurrentBoardIdx] = useState(0);
 
   async function animateSolution(board) {
     var animations = solve(board);
@@ -41,7 +41,7 @@ const SudokuSolver = () => {
   return (
     <div>
       <button disabled={buttonsDisabled} onClick={() => animateSolution(unsolvedBoards[currentBoardIdx])}>solve</button>
-      <button disabled={buttonsDisabled}>reset</button>
+      <button disabled={buttonsDisabled} onClick={() => setBoardValues(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]))}>reset</button>
       <Slider />
       <Board board={boardValues} />
     </div>
