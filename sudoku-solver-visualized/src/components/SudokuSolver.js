@@ -39,9 +39,11 @@ const convertBoardArrayToObjects = (arr) => {
 
 const SudokuSolver = () => {
   const [boardValues, setBoardValues] = useState(convertBoardArrayToObjects(defaultBoardValues));
+  const [buttonsDisabled, setButtonsDisabled] = useState(false)
 
   async function animateSolution(board) {
     var animations = solve(defaultBoardValues); // CHANGE THIS TO NOT USE DEFAULT
+    setButtonsDisabled(true);
   
     if (animations) {
       for (const anim of animations) {
@@ -50,6 +52,8 @@ const SudokuSolver = () => {
         await animateCell(anim, animSpeed);
       }
     }
+
+    setButtonsDisabled(false);
   }
   
   const animateCell = (anim, animSpeed) => {
@@ -68,8 +72,8 @@ const SudokuSolver = () => {
 
   return (
     <div>
-      <button onClick={() => animateSolution(boardValues)}>solve</button>
-      <button >reset</button>
+      <button disabled={buttonsDisabled} onClick={() => animateSolution(boardValues)}>solve</button>
+      <button disabled={buttonsDisabled}>reset</button>
       <Slider />
       <Board board={boardValues} />
     </div>
