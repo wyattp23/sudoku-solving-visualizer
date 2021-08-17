@@ -39,7 +39,7 @@ const convertBoardArrayToObjects = (arr) => {
 
 const SudokuSolver = () => {
   const [boardValues, setBoardValues] = useState(convertBoardArrayToObjects(defaultBoardValues));
-  const [buttonsDisabled, setButtonsDisabled] = useState(false)
+  const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
   async function animateSolution(board) {
     var animations = solve(defaultBoardValues); // CHANGE THIS TO NOT USE DEFAULT
@@ -48,7 +48,6 @@ const SudokuSolver = () => {
     if (animations) {
       for (const anim of animations) {
         var animSpeed = document.getElementById("animSpeed").value;
-        console.log("calling animate cell...")
         await animateCell(anim, animSpeed);
       }
     }
@@ -60,7 +59,6 @@ const SudokuSolver = () => {
     console.log({anim})
     return new Promise((resolve) => {
       setTimeout(() => {
-        console.log("animating cell...");
         let newBoard = [...boardValues];
         newBoard[anim.row][anim.col].number = anim.number;
         newBoard[anim.row][anim.col].status = anim.status;
