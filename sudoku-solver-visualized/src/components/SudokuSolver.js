@@ -15,37 +15,63 @@ const defaultBoardValues = [
   [0, 0, 5, 2, 0, 6, 3, 0, 0],
 ];
 
+const convertBoardArrayToObjects = (arr) => {
+  let newBoard = [];
+
+  arr.forEach((row) =>  {
+    let newRow = [];
+
+    row.forEach((cell) => {
+      // statuses: 
+      // "static" - initial state for all cells,
+      //            cells with an initial value will always be static
+      // "active" - the cell that the algorithm is currently 
+      //            selecting a value for
+      // "visited" - a cell that was active previously
+      newRow.push({number: cell, status: "static"});
+    });
+
+    newBoard.push(newRow);
+  });
+
+  return newBoard;
+}
+
 const SudokuSolver = () => {
-  const [boardValues, setBoardValues] = useState(defaultBoardValues);
+  const [boardValues, setBoardValues] = useState(convertBoardArrayToObjects(defaultBoardValues));
 
   async function animateSolution(board) {
-    var animations = solve(board);
+    var animations = solve(defaultBoardValues); // CHANGE THIS TO NOT USE DEFAULT
   
     if (animations) {
       for (const anim of animations) {
         var animSpeed = document.getElementById("animSpeed").value;
+        console.log("calling animate cell...")
         await animateCell(anim, animSpeed);
       }
     }
   }
   
   const animateCell = (anim, animSpeed) => {
+    console.log({anim})
     return new Promise((resolve) => {
       setTimeout(() => {
-        document.getElementById(anim.cell).style.backgroundColor = anim.color;
-        document.getElementById(anim.cell).innerText =
-          anim.number == 0 ? "" : anim.number;
+        console.log("animating cell...");
+        let newBoard = [...boardValues];
+        newBoard[anim.row][anim.col].number = anim.number;
+        newBoard[anim.row][anim.col].status = anim.status;
+        setBoardValues(newBoard);
         resolve();
       }, animSpeed ** 2);
     });
-  };  
+  };
 
   return (
     <div>
       <button onClick={() => animateSolution(boardValues)}>solve</button>
       <button >reset</button>
       <Slider />
-      <Board values={boardValues} />
+      <Board board={boardValues} />
     </div>
   );
 };

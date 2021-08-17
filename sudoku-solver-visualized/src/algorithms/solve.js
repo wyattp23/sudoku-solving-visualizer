@@ -1,3 +1,5 @@
+import { CellVal } from "../components/Cell.js"
+
 export const solve = (board, animations=[]) => {
   var [row, col] = findEmptyCell(board);
   var maxCellValue = 9;
@@ -11,8 +13,10 @@ export const solve = (board, animations=[]) => {
       board[row][col] = num;
       animations.push({
         cell: `cell[${row}][${col}]`,
+        row: row,
+        col: col,
         number: num,
-        color: "green",
+        status: "active",
       });
       if (solve(board, animations)) return animations;
 
@@ -20,8 +24,10 @@ export const solve = (board, animations=[]) => {
       board[row][col] = 0;
       animations.push({
         cell: `cell[${row}][${col}]`,
+        row: row,
+        col: col,
         number: 0,
-        color: "red",
+        status: "visited",
       });
     }
   }

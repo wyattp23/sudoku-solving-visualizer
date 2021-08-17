@@ -1,13 +1,17 @@
-import { useDebugValue } from "react";
 import Cell from "./Cell.js";
 
 export const Board = (props) => {
   return (
     <div id="board">
-      {props.values.map((values, i) => (
+      {props.board.map((row, i) => (
         <div className="row">
-          {values.map((value, j) => (
-            <Cell key={value.id} value={value} id={`cell[${i}][${j}]`} />
+          {row.map((cell, j) => (
+            <Cell 
+              key={cell.id} 
+              number={cell.number}
+              status={cell.status}
+              id={`cell[${i}][${j}]`}
+            />
           ))}
         </div>
       ))}

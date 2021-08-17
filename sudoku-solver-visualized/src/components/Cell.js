@@ -1,7 +1,7 @@
 const Cell = (props) => {
   return (
-    <div className={`cell ${getCellClass(props.id)}`} id={props.id}>
-      {props.value ? props.value : ""}
+    <div className={`cell ${props.status} ${getCellClass(props.id)}`} id={props.id}>
+      {props.number ? props.number : ""}
     </div>
   );
 };

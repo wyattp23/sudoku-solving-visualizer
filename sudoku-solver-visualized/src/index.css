@@ -17,7 +17,6 @@
   line-height: 50px;
   text-align: center;
   vertical-align: top;
-  background-color: lightgrey;
   margin: -4px;
   padding: 0;
   border-style: solid;
@@ -40,4 +39,16 @@
 
 .cell-bottom-border {
   border-bottom-color: black;
+}
+
+.static {
+  background-color: lightgray;
+}
+
+.active {
+  background-color: green;
+}
+
+.visited {
+  background-color: red;
 }
