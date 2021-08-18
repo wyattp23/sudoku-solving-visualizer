@@ -12,8 +12,6 @@ const SudokuSolver = () => {
 
   async function animateSolution(board) {
     var animations = solve(deepCopyBoard(board));
-    console.log(`const arr ${unsolvedBoards[currentBoardIdx]}`);
-
     setButtonsDisabled(true);
   
     if (animations) {
@@ -38,6 +36,13 @@ const SudokuSolver = () => {
     });
   };
 
+  const setNewBoard = () => {
+    let newBoardIdx = (currentBoardIdx + 1) % unsolvedBoards.length;
+    console.log(`new idx ${newBoardIdx}`);
+    setBoardValues(convertBoardArrayToObjects(unsolvedBoards[newBoardIdx]));
+    setCurrentBoardIdx(newBoardIdx);
+  }
+
   return (
     <div>
       <button 
@@ -49,6 +54,11 @@ const SudokuSolver = () => {
         disabled={buttonsDisabled} 
         onClick={() => setBoardValues(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]))}
       >RESET</button>
+
+      <button
+        disabled={buttonsDisabled}
+        onClick={() => setNewBoard()}
+      >NEW BOARD</button>
 
       <Slider />
       <Board board={boardValues} />
