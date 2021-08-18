@@ -9,6 +9,7 @@ const SudokuSolver = () => {
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
   const [currentBoardIdx, setCurrentBoardIdx] = useState(0);
   const [boardValues, setBoardValues] = useState(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]));
+  const [solved, setSolved] = useState(false);
 
   async function animateSolution(board) {
     var animations = solve(deepCopyBoard(board));
@@ -22,6 +23,7 @@ const SudokuSolver = () => {
     }
 
     setButtonsDisabled(false);
+    setSolved(true);
   }
   
   const animateCell = (anim, animSpeed) => {
@@ -40,16 +42,18 @@ const SudokuSolver = () => {
     let newBoardIdx = (currentBoardIdx + 1) % unsolvedBoards.length;
     setBoardValues(convertBoardArrayToObjects(unsolvedBoards[newBoardIdx]));
     setCurrentBoardIdx(newBoardIdx);
+    setSolved(false);
   }
 
   const resetBoard = () => {
     setBoardValues(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]));
+    setSolved(false);
   }
 
   return (
     <div>
       <button 
-        disabled={buttonsDisabled} 
+        disabled={buttonsDisabled || solved} 
         onClick={() => animateSolution(unsolvedBoards[currentBoardIdx])}
       >SOLVE</button>
 
