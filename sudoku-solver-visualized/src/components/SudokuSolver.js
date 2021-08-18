@@ -38,9 +38,12 @@ const SudokuSolver = () => {
 
   const setNewBoard = () => {
     let newBoardIdx = (currentBoardIdx + 1) % unsolvedBoards.length;
-    console.log(`new idx ${newBoardIdx}`);
     setBoardValues(convertBoardArrayToObjects(unsolvedBoards[newBoardIdx]));
     setCurrentBoardIdx(newBoardIdx);
+  }
+
+  const resetBoard = () => {
+    setBoardValues(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]));
   }
 
   return (
@@ -52,7 +55,7 @@ const SudokuSolver = () => {
 
       <button 
         disabled={buttonsDisabled} 
-        onClick={() => setBoardValues(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]))}
+        onClick={() => resetBoard()}
       >RESET</button>
 
       <button

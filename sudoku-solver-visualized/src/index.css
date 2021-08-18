@@ -1,3 +1,12 @@
+:root {
+  --board-border-color: white;
+}
+
+body {
+  text-align: center;
+  background-color: rgb(31, 31, 31);
+}
+
 #board {
   text-align: center;
   width: 500px;
@@ -20,35 +29,37 @@
   margin: -4px;
   padding: 0;
   border-style: solid;
-  border-color: grey;
+  border-color: rgb(138, 138, 138);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  color: whitesmoke;
 }
 
 .cell-right-border {
-  border-right-color: black;
+  border-right-color: var(--board-border-color);
 }
 
 .cell-left-border {
-  border-left-color: black;
+  border-left-color: var(--board-border-color);
 }
 
 .cell-top-border {
-  border-top-color: black;
+  border-top-color: var(--board-border-color);
 }
 
 .cell-bottom-border {
-  border-bottom-color: black;
+  border-bottom-color: var(--board-border-color);
 }
 
 .static {
-  background-color: lightgray;
+  background-color: black;
 }
 
 .active {
-  background-color: green;
+  background-color: rgb(0, 209, 35);
+  color: black;
 }
 
 .visited {
-  background-color: red;
+  background-color: rgb(65, 65, 65);
 }

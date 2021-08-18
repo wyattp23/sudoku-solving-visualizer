@@ -15,7 +15,6 @@ export const deepCopyBoard = (board) => {
 }
 
 export const convertBoardArrayToObjects = (arr) => {
-  console.log(`converting ${arr}`)
   let newBoard = [];
 
   arr.forEach((row) =>  {
