@@ -3,16 +3,17 @@ import { Slider } from "./Slider.js";
 import { solve } from "../algorithms/solve.js";
 import { useState } from "react";
 import {unsolvedBoards} from "../unsolvedBoards";
-
-const defaultBoardValues = unsolvedBoards[0];
+import { deepCopyBoard, convertBoardArrayToObjects } from "../helpers.js";
 
 const SudokuSolver = () => {
-  const [boardValues, setBoardValues] = useState(convertBoardArrayToObjects(defaultBoardValues));
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
   const [currentBoardIdx, setCurrentBoardIdx] = useState(0);
+  const [boardValues, setBoardValues] = useState(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]));
 
   async function animateSolution(board) {
-    var animations = solve(board);
+    var animations = solve(deepCopyBoard(board));
+    console.log(`const arr ${unsolvedBoards[currentBoardIdx]}`);
+
     setButtonsDisabled(true);
   
     if (animations) {
@@ -26,10 +27,9 @@ const SudokuSolver = () => {
   }
   
   const animateCell = (anim, animSpeed) => {
-    console.log({anim})
     return new Promise((resolve) => {
       setTimeout(() => {
-        let newBoard = [...boardValues];
+        let newBoard = deepCopyBoard(boardValues);
         newBoard[anim.row][anim.col].number = anim.number;
         newBoard[anim.row][anim.col].status = anim.status;
         setBoardValues(newBoard);
@@ -40,34 +40,22 @@ const SudokuSolver = () => {
 
   return (
     <div>
-      <button disabled={buttonsDisabled} onClick={() => animateSolution(unsolvedBoards[currentBoardIdx])}>solve</button>
-      <button disabled={buttonsDisabled} onClick={() => setBoardValues(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]))}>reset</button>
+      <button 
+        disabled={buttonsDisabled} 
+        onClick={() => animateSolution(unsolvedBoards[currentBoardIdx])}
+      >SOLVE</button>
+
+      <button 
+        disabled={buttonsDisabled} 
+        onClick={() => setBoardValues(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]))}
+      >RESET</button>
+
       <Slider />
       <Board board={boardValues} />
     </div>
   );
 };
 
-const convertBoardArrayToObjects = (arr) => {
-  let newBoard = [];
 
-  arr.forEach((row) =>  {
-    let newRow = [];
-
-    row.forEach((cell) => {
-      // statuses: 
-      // "static" - initial state for all cells,
-      //            cells with an initial value will always be static
-      // "active" - the cell that the algorithm is currently 
-      //            selecting a value for
-      // "visited" - a cell that was active previously
-      newRow.push({number: cell, status: "static"});
-    });
-
-    newBoard.push(newRow);
-  });
-
-  return newBoard;
-}
 
 export default SudokuSolver;

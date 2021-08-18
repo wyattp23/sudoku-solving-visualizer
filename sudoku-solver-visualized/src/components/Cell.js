@@ -9,7 +9,6 @@ const Cell = (props) => {
 const getCellClass = (id) => {
   var [row, col] = id.match(/\d/g);
   var classes = [];
-  console.log({ row, col });
 
   if (row == "0" || row == "3" || row == "6") classes.push("cell-top-border");
   if (col == "0" || col == "3" || col == "6") classes.push("cell-left-border");
