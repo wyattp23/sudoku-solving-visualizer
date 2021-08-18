@@ -52,23 +52,25 @@ const SudokuSolver = () => {
 
   return (
     <div>
-      <button 
-        disabled={buttonsDisabled || solved} 
-        onClick={() => animateSolution(unsolvedBoards[currentBoardIdx])}
-      >SOLVE</button>
+      <div id="buttons">
+        <button 
+          disabled={buttonsDisabled || solved} 
+          onClick={() => animateSolution(unsolvedBoards[currentBoardIdx])}
+        >Solve</button>
 
-      <button 
-        disabled={buttonsDisabled} 
-        onClick={() => resetBoard()}
-      >RESET</button>
+        <button 
+          disabled={buttonsDisabled} 
+          onClick={() => resetBoard()}
+        >Reset</button>
 
-      <button
-        disabled={buttonsDisabled}
-        onClick={() => setNewBoard()}
-      >NEW BOARD</button>
+        <button
+          disabled={buttonsDisabled}
+          onClick={() => setNewBoard()}
+      >New Board</button>
+      </div>
 
-      <Slider />
       <Board board={boardValues} />
+      <Slider />
     </div>
   );
 };

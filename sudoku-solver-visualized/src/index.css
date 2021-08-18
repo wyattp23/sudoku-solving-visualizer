@@ -1,11 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 :root {
   --board-border-color: white;
+  --font-basic: 'Quicksand', sans-serif;
+  --background: rgb(31, 31, 31);
+  --button-enabled-bg-color: rgb(54, 54, 54);
+  --button-hover-bg-color: rgb(209, 209, 209);
+  --button-active-bg-color: rgb(255, 0, 0);
 }
 
 body {
   text-align: center;
-  background-color: rgb(31, 31, 31);
+  background-color: var(--background);
 }
+
+#buttons {
+  text-align: center;
+  margin: 80px 0;
+}
+
+button {
+  margin: 10px 40px;
+  padding: 10px;
+  width: 120px;
+  font-size: 16px;
+  font-family: var(--font-basic);
+  border-radius: 10%;
+  background-color: var(--button-enabled-bg-color);
+  color: white;
+  border-color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transition: 0.3s;
+}
+
+button:active {
+  background-color: var(--button-active-bg-color);
+}
+
+button:hover:enabled {
+  background-color: var(--button-hover-bg-color);
+  color: black;
+  width: 130px;
+  transition: 0.5s;
+}
+
+
 
 #board {
   text-align: center;
@@ -31,9 +76,10 @@ body {
   padding: 0;
   border-style: solid;
   border-color: rgb(138, 138, 138);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-basic);
   font-weight: bold;
   color: whitesmoke;
+  transition: 250ms;
 }
 
 .cell-right-border {
@@ -57,10 +103,10 @@ body {
 }
 
 .active {
-  background-color: rgb(0, 209, 35);
+  background-color: rgb(95, 37, 187);
   color: black;
 }
 
 .visited {
-  background-color: rgb(65, 65, 65);
+  background-color: var(--background);
 }
