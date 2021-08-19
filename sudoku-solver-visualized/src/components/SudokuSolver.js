@@ -52,6 +52,7 @@ const SudokuSolver = () => {
 
   return (
     <div>
+      <Board board={boardValues} />
       <div id="buttons">
         <button 
           disabled={buttonsDisabled || solved} 
@@ -68,8 +69,6 @@ const SudokuSolver = () => {
           onClick={() => setNewBoard()}
       >new board</button>
       </div>
-
-      <Board board={boardValues} />
       <Slider />
     </div>
   );
