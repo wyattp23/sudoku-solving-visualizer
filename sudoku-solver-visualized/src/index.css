@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
   --board-border-color: white;
-  --font-basic: 'Quicksand', sans-serif;
+  --font-basic: 'Open Sans', sans-serif;
   --background: rgb(31, 31, 31);
   --button-enabled-bg-color: rgb(54, 54, 54);
   --button-hover-bg-color: rgb(209, 209, 209);
@@ -22,7 +22,7 @@ body {
 button {
   margin: 10px 40px;
   padding: 10px;
-  width: 120px;
+  width: 130px;
   font-size: 16px;
   font-family: var(--font-basic);
   border-radius: 10%;
@@ -46,11 +46,19 @@ button:active {
 button:hover:enabled {
   background-color: var(--button-hover-bg-color);
   color: black;
-  width: 130px;
+  width: 140px;
   transition: 0.5s;
 }
 
-
+#header {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  font-family: var(--font-basic);
+  color: black;
+  font-size: 45px;
+  background-color: white;
+}
 
 #board {
   text-align: center;
@@ -79,7 +87,8 @@ button:hover:enabled {
   font-family: var(--font-basic);
   font-weight: bold;
   color: whitesmoke;
-  transition: 250ms;
+  transition-property: background-color;
+  transition: 300ms;
 }
 
 .cell-right-border {
@@ -103,10 +112,10 @@ button:hover:enabled {
 }
 
 .active {
-  background-color: rgb(95, 37, 187);
-  color: black;
+  background-color: rgb(69, 92, 221);
+  color: white;
 }
 
 .visited {
-  background-color: var(--background);
+  background-color: rgb(44, 58, 136);
 }

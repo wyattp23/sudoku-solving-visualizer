@@ -56,17 +56,17 @@ const SudokuSolver = () => {
         <button 
           disabled={buttonsDisabled || solved} 
           onClick={() => animateSolution(unsolvedBoards[currentBoardIdx])}
-        >Solve</button>
+        >solve</button>
 
         <button 
           disabled={buttonsDisabled} 
           onClick={() => resetBoard()}
-        >Reset</button>
+        >reset</button>
 
         <button
           disabled={buttonsDisabled}
           onClick={() => setNewBoard()}
-      >New Board</button>
+      >new board</button>
       </div>
 
       <Board board={boardValues} />
