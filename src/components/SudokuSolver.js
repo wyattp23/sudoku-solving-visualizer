@@ -53,7 +53,6 @@ const SudokuSolver = () => {
   return (
     <div>
       <p id="difficulty">{boardDifficulties[currentBoardIdx]}</p>
-      <img className="star" source="../star.svg"/>
       <Board board={boardValues} />
       <div id="buttons">
         <button 
