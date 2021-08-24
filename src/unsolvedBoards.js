@@ -1,8 +1,8 @@
 export const boardDifficulties = [
-    "easy",
-    "hard",
-    "very hard",
-    "WORLD'S HARDEST SUDOKU (this will take awhile...)"
+    "Easy",
+    "Hard",
+    "Very Hard",
+    "World's Hardest Sudoku (this will take awhile...)"
 ]
 
 export const unsolvedBoards = [

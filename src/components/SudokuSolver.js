@@ -1,8 +1,9 @@
 import { Board } from "./Board.js";
 import { Slider } from "./Slider.js";
+import { DifficultyMeter } from "./DifficultyMeter.js";
 import { solve } from "../algorithms/solve.js";
 import { useState } from "react";
-import { boardDifficulties, unsolvedBoards } from "../unsolvedBoards";
+import { unsolvedBoards } from "../unsolvedBoards";
 import { deepCopyBoard, convertBoardArrayToObjects } from "../helpers.js";
 
 const SudokuSolver = () => {
@@ -52,7 +53,7 @@ const SudokuSolver = () => {
 
   return (
     <div>
-      <p id="difficulty">{boardDifficulties[currentBoardIdx]}</p>
+      <DifficultyMeter currentBoardIdx={currentBoardIdx}/>
       <Board board={boardValues} />
       <div id="buttons">
         <button 
