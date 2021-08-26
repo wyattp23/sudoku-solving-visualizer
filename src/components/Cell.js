@@ -1,4 +1,4 @@
-const Cell = (props) => {
+export const Cell = (props) => {
   return (
     <div className={`cell ${props.status} ${getCellClass(props.id)}`} id={props.id}>
       {props.number ? props.number : ""}
@@ -17,5 +17,3 @@ const getCellClass = (id) => {
 
   return classes.join(" ");
 };
-
-export default Cell;
