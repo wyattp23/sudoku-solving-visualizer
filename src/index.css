@@ -53,7 +53,7 @@ button:hover:enabled {
 
 header {
   width: 100%;
-  height: 100px;
+  min-height: 100px;
   margin: 0;
   padding-bottom: 0;
   padding-top: 25px;
