@@ -52,7 +52,7 @@ const SudokuSolver = () => {
   }
 
   return (
-    <div>
+    <>
       <DifficultyMeter currentBoardIdx={currentBoardIdx}/>
       <Board board={boardValues} />
       <div id="buttons">
@@ -63,16 +63,16 @@ const SudokuSolver = () => {
 
         <button 
           disabled={buttonsDisabled} 
-          onClick={() => resetBoard()}
+          onClick={resetBoard}
         >reset</button>
 
         <button
           disabled={buttonsDisabled}
-          onClick={() => setNewBoard()}
+          onClick={setNewBoard}
       >new board</button>
       </div>
       <Slider />
-    </div>
+    </>
   );
 };
 
