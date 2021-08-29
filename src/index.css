@@ -2,6 +2,7 @@
 
 :root {
   --board-border-color: white;
+  --cell-border-color: rgb(138, 138, 138);
   --font-basic: 'Open Sans', sans-serif;
   --background: rgb(31, 31, 31);
   --button-enabled-bg-color: rgb(54, 54, 54);
@@ -89,30 +90,28 @@ header {
 }
 
 #board {
-  text-align: center;
-  margin: 40px auto 0px auto;
+  margin: 0 auto;
   width: 500px;
   height: 500px;
-  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
-.row {
-  display: block;
-  width: 100%;
+.row:nth-child(3n) {
+  border-bottom: 4px solid var(--board-border-color);
+}
+
+.row:nth-child(3n + 1) {
+  border-top: 4px solid var(--board-border-color);
 }
 
 .cell {
-  display: inline-block;
   height: 50px;
   width: 50px;
   line-height: 50px;
   text-align: center;
+  border: 1px solid var(--cell-border-color);
   font-size: 25px;
-  vertical-align: top;
-  margin: -4px;
-  padding: 0;
-  border-style: solid;
-  border-color: rgb(138, 138, 138);
   font-family: var(--font-basic);
   font-weight: bold;
   color: rgb(214, 214, 214);
@@ -120,20 +119,12 @@ header {
   transition: 300ms;
 }
 
-.cell-right-border {
-  border-right-color: var(--board-border-color);
+.cell:nth-child(3n) {
+  border-right: 4px solid var(--board-border-color);
 }
 
-.cell-left-border {
-  border-left-color: var(--board-border-color);
-}
-
-.cell-top-border {
-  border-top-color: var(--board-border-color);
-}
-
-.cell-bottom-border {
-  border-bottom-color: var(--board-border-color);
+.cell:nth-child(3n + 1) {
+  border-left: 4px solid var(--board-border-color);
 }
 
 .static {
