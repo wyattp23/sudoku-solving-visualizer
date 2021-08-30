@@ -4,8 +4,8 @@
   --board-border-color: white;
   --cell-border-color: rgb(138, 138, 138);
   --font-basic: 'Open Sans', sans-serif;
-  --background: rgb(47, 47, 47);
-  --button-enabled-bg-color: rgb(54, 54, 54);
+  --background: rgb(29, 29, 29);
+  --button-enabled-bg-color: rgb(70, 70, 70);
   --button-hover-bg-color: rgb(209, 209, 209);
   --button-active-bg-color: rgb(255, 0, 0);
 }
