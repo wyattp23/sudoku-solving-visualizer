@@ -13,6 +13,7 @@
 body {
   text-align: center;
   margin: 0;
+  word-spacing: 7px;
   background-color: var(--background);
 }
 
@@ -60,8 +61,9 @@ header {
   padding-top: 25px;
   text-align: center;
   font-family: var(--font-basic);
-  color: white;
   font-size: 45px;
+  font-weight: bolder;
+  color: white;
   background-color: rgb(17, 17, 17);
 }
 
@@ -69,6 +71,7 @@ header {
   width: 50%;
   margin: auto;
   font-family: var(--font-basic);
+  font-style: italic;
   color: white;
 }
 
