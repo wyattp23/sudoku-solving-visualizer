@@ -68,6 +68,8 @@ header {
 .slidercontainer {
   width: 50%;
   margin: auto;
+  font-family: var(--font-basic);
+  color: white;
 }
 
 #difficultyMeter {

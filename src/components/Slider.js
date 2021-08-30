@@ -7,8 +7,8 @@ export const Slider = () => {
 
   return (
     <>
-    <p>Delay: {delay}ms</p>
     <div class="slidercontainer">
+    <p>Delay: {delay ** 2}ms</p>
       <input
         type="range" 
         min={minDelay}
