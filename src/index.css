@@ -1,21 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
-  --cell-border-color: rgb(138, 138, 138);
   --font-basic: 'Open Sans', sans-serif;
-  --background: rgb(29, 29, 29);
+
+  --white: rgb(214, 214, 214);
+  --off-white: rgb(156, 156, 156);
+
+  --off-black: rgb(32, 32, 32);
+  --black: rgb(20, 20, 20);
+
   --button-enabled-bg-color: rgb(70, 70, 70);
   --button-hover-bg-color: rgb(209, 209, 209);
   --button-active-bg-color: rgb(255, 0, 0);
-  --off-white: rgb(226, 226, 226);
-  --white: rgb(245, 245, 245);
+  --cell-border-color: rgb(138, 138, 138);
 }
 
 body {
   text-align: center;
   margin: 0;
   word-spacing: 7px;
-  background-color: var(--background);
+  background-color: var(--off-black);
 }
 
 #buttons {
@@ -31,8 +35,8 @@ button {
   font-family: var(--font-basic);
   border-radius: 10%;
   background-color: var(--button-enabled-bg-color);
-  color: var(--off-white);
-  border-color: var(--white);
+  color: var(--white);
+  border-color: var(--off-white);
   cursor: pointer;
   transition: 0.5s;
 }
@@ -49,7 +53,7 @@ button:active {
 
 button:hover:enabled {
   background-color: var(--button-hover-bg-color);
-  color: black;
+  color: var(--black);
   width: 140px;
   transition: 0.5s;
 }
@@ -65,7 +69,7 @@ header {
   font-size: 45px;
   font-weight: bolder;
   color: var(--white);
-  background-color: rgb(17, 17, 17);
+  background-color: var(--black);
 }
 
 .slidercontainer {
@@ -92,6 +96,7 @@ header {
   width: 25px;
   height: 25px;
   display: inline-block;
+  padding: 0 4px;
   margin: 15px 0 0px 0;
 }
 
@@ -134,12 +139,12 @@ header {
 }
 
 .static {
-  background-color: black;
+  background-color: var(--black);
 }
 
 .active {
   background-color: rgb(69, 92, 221);
-  color: var(--off-white);
+  color: var(--white);
 }
 
 .visited {
