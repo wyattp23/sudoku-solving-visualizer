@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
-  --board-border-color: white;
   --cell-border-color: rgb(138, 138, 138);
   --font-basic: 'Open Sans', sans-serif;
   --background: rgb(29, 29, 29);
   --button-enabled-bg-color: rgb(70, 70, 70);
   --button-hover-bg-color: rgb(209, 209, 209);
   --button-active-bg-color: rgb(255, 0, 0);
+  --off-white: rgb(226, 226, 226);
+  --white: rgb(245, 245, 245);
 }
 
 body {
@@ -30,8 +31,8 @@ button {
   font-family: var(--font-basic);
   border-radius: 10%;
   background-color: var(--button-enabled-bg-color);
-  color: white;
-  border-color: white;
+  color: var(--off-white);
+  border-color: var(--white);
   cursor: pointer;
   transition: 0.5s;
 }
@@ -63,7 +64,7 @@ header {
   font-family: var(--font-basic);
   font-size: 45px;
   font-weight: bolder;
-  color: white;
+  color: var(--white);
   background-color: rgb(17, 17, 17);
 }
 
@@ -72,7 +73,7 @@ header {
   margin: auto;
   font-family: var(--font-basic);
   font-style: italic;
-  color: white;
+  color: var(--off-white);
 }
 
 #difficultyMeter {
@@ -84,7 +85,7 @@ header {
   display: inline-block;
   margin: 40px 0px 0 0;
   font-family: var(--font-basic);
-  color: white;
+  color: var(--off-white);
 }
 
 .star {
@@ -95,7 +96,7 @@ header {
 }
 
 #board {
-  margin: 2em auto;
+  margin: 1.5em auto;
   width: 500px;
   height: 500px;
   border-spacing: 0;
@@ -103,11 +104,11 @@ header {
 }
 
 .row:nth-child(3n) {
-  border-bottom: 4px solid var(--board-border-color);
+  border-bottom: 4px solid var(--white);
 }
 
 .row:nth-child(3n + 1) {
-  border-top: 4px solid var(--board-border-color);
+  border-top: 4px solid var(--white);
 }
 
 .cell {
@@ -119,17 +120,17 @@ header {
   font-size: 25px;
   font-family: var(--font-basic);
   font-weight: bold;
-  color: rgb(214, 214, 214);
+  color: var(--off-white);
   transition-property: background-color;
   transition: 300ms;
 }
 
 .cell:nth-child(3n) {
-  border-right: 4px solid var(--board-border-color);
+  border-right: 4px solid var(--white);
 }
 
 .cell:nth-child(3n + 1) {
-  border-left: 4px solid var(--board-border-color);
+  border-left: 4px solid var(--white);
 }
 
 .static {
@@ -138,7 +139,7 @@ header {
 
 .active {
   background-color: rgb(69, 92, 221);
-  color: white;
+  color: var(--off-white);
 }
 
 .visited {
