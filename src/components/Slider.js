@@ -7,7 +7,7 @@ export const Slider = () => {
 
   return (
     <>
-    <div class="slidercontainer">
+    <div className="slidercontainer">
     <p>Delay: {delay ** 2}ms</p>
       <input
         type="range" 
