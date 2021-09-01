@@ -5,7 +5,7 @@ export const Board = (props) => {
     <table id="board">
       <tbody>
         {props.board.map((row, i) => (
-          <tr className="row">
+          <tr className="row" key={i}>
             {row.map((cell, j) => (
               <Cell 
                 key={cell.id} 

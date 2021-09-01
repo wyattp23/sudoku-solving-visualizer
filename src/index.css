@@ -20,6 +20,7 @@ body {
   margin: 0;
   word-spacing: 7px;
   background-color: var(--off-black);
+  width: 100%;
 }
 
 #buttons {
