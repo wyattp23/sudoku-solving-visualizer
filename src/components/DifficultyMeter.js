@@ -8,7 +8,7 @@ export const DifficultyMeter = (props) => {
                     key={i} 
                     src={star} 
                     alt="star" 
-                    className={`star${props.currentBoardIdx == 3 ? " extreme" : ""}`}
+                    className={`star${props.currentBoardIdx === 3 ? " extreme" : ""}`}
                 />
             )}
         </div>

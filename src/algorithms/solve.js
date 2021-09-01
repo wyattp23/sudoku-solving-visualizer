@@ -2,7 +2,7 @@ export const solve = (board, animations=[]) => {
   var [row, col] = findEmptyCell(board);
   var maxCellValue = 9;
 
-  if (row == -1 && col == -1) {
+  if (row === -1 && col === -1) {
     return animations; //Board is complete.
   }
 
@@ -36,7 +36,7 @@ export const solve = (board, animations=[]) => {
 const findEmptyCell = (board) => {
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board.length; j++) {
-      if (board[i][j] == 0) {
+      if (board[i][j] === 0) {
         return [i, j];
       }
     }
