@@ -19,6 +19,7 @@ body {
   text-align: center;
   margin: 0;
   word-spacing: 7px;
+  letter-spacing: 4px;
   background-color: var(--off-black);
   width: 100%;
 }
@@ -31,14 +32,21 @@ body {
 button {
   margin: 10px 40px;
   padding: 10px;
-  width: 130px;
+  width: 150px;
+  height: 60px;
+
   font-size: 19px;
   font-family: var(--font-basic);
+  letter-spacing: 3px;
+
   border-radius: 10%;
   background-color: var(--button-enabled-bg-color);
+
   color: var(--white);
   border-color: var(--off-white);
+
   cursor: pointer;
+
   transition: 0.5s;
 }
 
@@ -55,7 +63,7 @@ button:active {
 button:hover:enabled {
   background-color: var(--button-hover-bg-color);
   color: var(--black);
-  width: 140px;
+  width: 160px;
   transition: 0.5s;
 }
 
