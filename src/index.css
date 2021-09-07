@@ -18,7 +18,11 @@
   --button-enabled-bg-color: rgb(70, 70, 70);
   --button-hover-bg-color: rgb(209, 209, 209);
   --button-active-bg-color: rgb(255, 0, 0);
+  --button-width: 10rem;
   --cell-border-color: rgb(138, 138, 138);
+
+  word-spacing: 0.48rem;
+  letter-spacing: 0.3rem;
 }
 
 @media (max-width : 540px) {
@@ -28,6 +32,9 @@
     --fs-large: 1rem;
     --fs-mid: 0.7rem;
     --fs-small: 0.5rem;
+
+    word-spacing: 0.15rem;
+    letter-spacing: 0.15rem;
   }
 }
 
@@ -35,8 +42,6 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  word-spacing: 0.48rem;
-  letter-spacing: 0.3rem;
   background-color: var(--off-black);
   min-width: 100%;
 }
@@ -48,13 +53,12 @@ body {
 
 button {
   margin: 1rem 1rem;
-  padding: 0.5rem;
-  width: 9rem;
-  height: 4rem;
+  padding: calc(0.6rem / var(--size-divisor));
+  width: calc(var(--button-width) / var(--size-divisor));
+  height: calc(4rem / var(--size-divisor));
 
   font-size: var(--fs-mid);
   font-family: var(--font-basic);
-  letter-spacing: 0.2rem;
 
   border-radius: 10%;
   background-color: var(--button-enabled-bg-color);
@@ -81,7 +85,7 @@ button:active {
   button:hover:enabled {
     background-color: var(--button-hover-bg-color);
     color: var(--black);
-    width: 9.8rem;
+    width: calc(var(--button-width) * 1.1);
     transition: 0.5s;
   }
 }
