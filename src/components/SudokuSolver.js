@@ -9,13 +9,15 @@ import { deepCopyBoard, convertBoardArrayToObjects } from "../helpers.js";
 const SudokuSolver = () => {
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
   const [currentBoardIdx, setCurrentBoardIdx] = useState(0);
-  const [boardValues, setBoardValues] = useState(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]));
+  const [boardValues, setBoardValues] = useState(
+    convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx])
+  );
   const [solved, setSolved] = useState(false);
 
   async function animateSolution(board) {
     var animations = solve(deepCopyBoard(board));
     setButtonsDisabled(true);
-  
+
     if (animations) {
       for (const anim of animations) {
         var animSpeed = document.getElementById("animSpeed").value;
@@ -26,7 +28,7 @@ const SudokuSolver = () => {
     setButtonsDisabled(false);
     setSolved(true);
   }
-  
+
   const animateCell = (anim, animSpeed) => {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -44,38 +46,36 @@ const SudokuSolver = () => {
     setBoardValues(convertBoardArrayToObjects(unsolvedBoards[newBoardIdx]));
     setCurrentBoardIdx(newBoardIdx);
     setSolved(false);
-  }
+  };
 
   const resetBoard = () => {
     setBoardValues(convertBoardArrayToObjects(unsolvedBoards[currentBoardIdx]));
     setSolved(false);
-  }
+  };
 
   return (
     <>
-      <DifficultyMeter currentBoardIdx={currentBoardIdx}/>
+      <DifficultyMeter currentBoardIdx={currentBoardIdx} />
       <Board board={boardValues} />
       <div id="buttons">
-        <button 
-          disabled={buttonsDisabled || solved} 
-          onClick={() => animateSolution(unsolvedBoards[currentBoardIdx])}
-        >solve</button>
-
-        <button 
-          disabled={buttonsDisabled} 
-          onClick={resetBoard}
-        >reset</button>
-
         <button
-          disabled={buttonsDisabled}
-          onClick={setNewBoard}
-      >new board</button>
+          disabled={buttonsDisabled || solved}
+          onClick={() => animateSolution(unsolvedBoards[currentBoardIdx])}
+        >
+          solve
+        </button>
+
+        <button disabled={buttonsDisabled} onClick={resetBoard}>
+          reset
+        </button>
+
+        <button disabled={buttonsDisabled} onClick={setNewBoard}>
+          new board
+        </button>
       </div>
       <Slider />
     </>
   );
 };
-
-
 
 export default SudokuSolver;

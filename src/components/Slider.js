@@ -7,15 +7,16 @@ export const Slider = () => {
 
   return (
     <>
-    <div className="slidercontainer">
-    <p>Delay: {delay ** 2}ms</p>
-      <input
-        type="range" 
-        min={minDelay}
-        max={maxDelay} 
-        id="animSpeed"
-        onChange={(e) => setDelay(e.target.value)} />
-    </div>
+      <div className="slidercontainer">
+        <p>Delay: {delay ** 2}ms</p>
+        <input
+          type="range"
+          min={minDelay}
+          max={maxDelay}
+          id="animSpeed"
+          onChange={(e) => setDelay(e.target.value)}
+        />
+      </div>
     </>
   );
 };

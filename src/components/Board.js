@@ -7,8 +7,8 @@ export const Board = (props) => {
         {props.board.map((row, i) => (
           <tr className="row" key={i}>
             {row.map((cell, j) => (
-              <Cell 
-                key={j} 
+              <Cell
+                key={j}
                 number={cell.number}
                 status={cell.status}
                 id={`cell[${i}][${j}]`}
