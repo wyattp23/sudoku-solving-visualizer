@@ -30,7 +30,7 @@
     --size-divisor: 2;
     --fs-header: 1.8rem;
     --fs-large: 1rem;
-    --fs-mid: 0.7rem;
+    --fs-mid: 0.6rem;
     --fs-small: 0.5rem;
 
     word-spacing: 0.15rem;
@@ -59,6 +59,8 @@ button {
 
   font-size: var(--fs-mid);
   font-family: var(--font-basic);
+
+  letter-spacing: calc(0.2rem / var(--size-divisor));
 
   border-radius: 10%;
   background-color: var(--button-enabled-bg-color);
