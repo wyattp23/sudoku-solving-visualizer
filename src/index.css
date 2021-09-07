@@ -4,7 +4,7 @@
   --size-divisor: 1;
 
   --font-basic: 'Open Sans', sans-serif;
-  --fs-header: 2.5rem;
+  --fs-header: 2.5em;
   --fs-large: 1.4rem;
   --fs-mid: 1.1rem;
   --fs-small: 0.95rem;
@@ -23,7 +23,11 @@
 
 @media (max-width : 540px) {
   :root {
-    --size-divisor: 2
+    --size-divisor: 2;
+    --fs-header: 1.8rem;
+    --fs-large: 1rem;
+    --fs-mid: 0.7rem;
+    --fs-small: 0.5rem;
   }
 }
 
