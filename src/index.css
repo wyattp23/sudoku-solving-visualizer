@@ -95,8 +95,7 @@ button:active {
 header {
   min-height: 6rem;
   margin: 0;
-  padding-bottom: 0;
-  padding-top: 2rem;
+  padding: 2rem 1rem 0 1rem;
   text-align: center;
   font-family: var(--font-basic);
   font-size: var(--fs-header);
