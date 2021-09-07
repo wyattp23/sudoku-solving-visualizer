@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
+  --size-divisor: 1;
+
   --font-basic: 'Open Sans', sans-serif;
   --fs-header: 2.5rem;
   --fs-large: 1.4rem;
@@ -17,6 +19,12 @@
   --button-hover-bg-color: rgb(209, 209, 209);
   --button-active-bg-color: rgb(255, 0, 0);
   --cell-border-color: rgb(138, 138, 138);
+}
+
+@media (max-width : 540px) {
+  :root {
+    --size-divisor: 2
+  }
 }
 
 body {
@@ -110,7 +118,6 @@ header {
 
 #board {
   margin: 1.5rem auto;
-  min-width: 25rem;
   border-spacing: 0;
   border-collapse: collapse;
 }
@@ -124,8 +131,8 @@ header {
 }
 
 .cell {
-  height: 3.2rem;
-  width: 3.2rem;
+  height: calc(3.2rem / var(--size-divisor));
+  width: calc(3.2rem / var(--size-divisor));
   text-align: center;
   border: 0.1rem solid var(--cell-border-color);
   font-size: var(--fs-large);
