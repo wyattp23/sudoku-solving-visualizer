@@ -12,3 +12,9 @@ test("renders solve button", () => {
   const solveButton = screen.getByText(/solve/i);
   expect(solveButton).toBeInTheDocument();
 });
+
+test("renders reset button", () => {
+  render(<App />);
+  const resetButton = screen.getByText(/reset/i);
+  expect(resetButton).toBeInTheDocument();
+});
