@@ -18,3 +18,9 @@ test("renders reset button", () => {
   const resetButton = screen.getByText(/reset/i);
   expect(resetButton).toBeInTheDocument();
 });
+
+test("renders new board button", () => {
+  render(<App />);
+  const newBoardButton = screen.getByText(/new board/i);
+  expect(newBoardButton).toBeInTheDocument();
+});
