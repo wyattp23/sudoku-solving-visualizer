@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
-import solve from "./algorithms/solve.js";
+import { solve } from "./algorithms/solve.js";
 import { unsolvedBoards, solutions } from "./unsolvedBoards.js";
 
 test("renders header", () => {
@@ -25,4 +25,12 @@ test("renders new board button", () => {
   render(<App />);
   const newBoardButton = screen.getByText(/new board/i);
   expect(newBoardButton).toBeInTheDocument();
+});
+
+test("returns correct solution to unsolved board", () => {
+  for (let i = 0; i < solutions.length; i++) {
+    let [ ,board] = solve(unsolvedBoards[i]);
+    let solution = solutions[i];
+    expect(board).toEqual(solution);
+  }
 });
