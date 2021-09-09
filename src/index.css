@@ -84,7 +84,7 @@ button:active {
   button:hover:enabled {
     background-color: var(--button-hover-bg-color);
     color: var(--black);
-    width: calc(var(--button-width) * 1.1);
+    width: calc((var(--button-width) * 1.1) / var(--size-divisor));
     transition: 0.5s;
   }
 }
