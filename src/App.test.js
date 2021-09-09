@@ -1,5 +1,3 @@
-import { render, screen } from "@testing-library/react";
-import App from "./App";
 import { solve } from "./algorithms/solve.js";
 import { unsolvedBoards, solutions } from "./unsolvedBoards.js";
 
