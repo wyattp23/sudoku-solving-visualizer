@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
+import solve from "./algorithms/solve.js";
 
 test("renders header", () => {
   render(<App />);

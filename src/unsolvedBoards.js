@@ -1,10 +1,3 @@
-export const boardDifficulties = [
-  "Easy",
-  "Hard",
-  "Very Hard",
-  "World's Hardest Sudoku (this will take awhile...)",
-];
-
 export const unsolvedBoards = [
   [
     [5, 3, 0, 0, 7, 0, 9, 0, 0],
@@ -51,3 +44,5 @@ export const unsolvedBoards = [
     [0, 9, 0, 0, 0, 0, 4, 0, 0],
   ],
 ];
+
+
