@@ -15,7 +15,7 @@ const SudokuSolver = () => {
   const [solved, setSolved] = useState(false);
 
   async function animateSolution(board) {
-    const [animations, ] = solve(deepCopyBoard(board));
+    const [animations] = solve(deepCopyBoard(board));
     setButtonsDisabled(true);
 
     if (animations) {
