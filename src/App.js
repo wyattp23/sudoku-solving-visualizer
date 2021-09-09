@@ -1,4 +1,3 @@
-import "./App.css";
 import SudokuSolver from "./components/SudokuSolver";
 
 function App() {
