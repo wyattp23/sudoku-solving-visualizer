@@ -3,7 +3,7 @@ export const solve = (board, animations = []) => {
   var maxCellValue = 9;
 
   if (row === -1 && col === -1) {
-    return animations; //Board is complete.
+    return [animations, board]; //Board is complete.
   }
 
   for (let num = 1; num <= maxCellValue; num++) {
@@ -16,7 +16,7 @@ export const solve = (board, animations = []) => {
         number: num,
         status: "active",
       });
-      if (solve(board, animations)) return animations;
+      if (solve(board, animations)) return [animations, board];
 
       // Remove the value if it does not lead to a solved board
       board[row][col] = 0;
