@@ -38,17 +38,14 @@
   }
 }
 
+/* Default Styles */
+
 body {
   text-align: center;
   margin: 0;
   padding: 0;
   background-color: var(--off-black);
   min-width: 100%;
-}
-
-#buttons {
-  text-align: center;
-  margin-bottom: 1.5rem;
 }
 
 button {
@@ -104,26 +101,7 @@ header {
   background-color: var(--black);
 }
 
-.slidercontainer {
-  width: 50%;
-  margin: auto;
-  font-family: var(--font-basic);
-  font-size: var(--fs-small);
-  font-style: italic;
-  color: var(--off-white);
-}
-
-#difficultyMeter {
-  width: 8rem;
-  margin: auto;
-}
-
-#difficulty {
-  display: inline-block;
-  margin: 3rem 0 0 0;
-  font-family: var(--font-basic);
-  color: var(--off-white);
-}
+/* Board Styles */
 
 #board {
   margin: 1.5rem auto;
@@ -173,6 +151,13 @@ header {
   background-color: rgb(44, 58, 136);
 }
 
+/* Difficulty Styles */
+
+#difficultyMeter {
+  width: 8rem;
+  margin: auto;
+}
+
 .star {
   width: 1.5rem;
   display: inline-block;
@@ -185,6 +170,24 @@ header {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
+
+/* Containers */
+
+#buttons {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.slidercontainer {
+  width: 50%;
+  margin: auto;
+  font-family: var(--font-basic);
+  font-size: var(--fs-small);
+  font-style: italic;
+  color: var(--off-white);
+}
+
+/* Animations */
 
 @keyframes shake {
   0% {
