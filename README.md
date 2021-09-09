@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Sudoku Solving Visualizer
+A visualization of the classic sudoku backtracking algorithm.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
