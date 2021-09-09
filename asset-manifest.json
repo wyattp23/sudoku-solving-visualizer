@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/sudoku-solving-visualizer/static/css/main.cf5b508a.chunk.css",
+    "main.js": "/sudoku-solving-visualizer/static/js/main.c1519ca4.chunk.js",
+    "main.js.map": "/sudoku-solving-visualizer/static/js/main.c1519ca4.chunk.js.map",
+    "runtime-main.js": "/sudoku-solving-visualizer/static/js/runtime-main.08092421.js",
+    "runtime-main.js.map": "/sudoku-solving-visualizer/static/js/runtime-main.08092421.js.map",
+    "static/js/2.1a83e16e.chunk.js": "/sudoku-solving-visualizer/static/js/2.1a83e16e.chunk.js",
+    "static/js/2.1a83e16e.chunk.js.map": "/sudoku-solving-visualizer/static/js/2.1a83e16e.chunk.js.map",
+    "static/js/3.9669f576.chunk.js": "/sudoku-solving-visualizer/static/js/3.9669f576.chunk.js",
+    "static/js/3.9669f576.chunk.js.map": "/sudoku-solving-visualizer/static/js/3.9669f576.chunk.js.map",
+    "index.html": "/sudoku-solving-visualizer/index.html",
+    "static/css/main.cf5b508a.chunk.css.map": "/sudoku-solving-visualizer/static/css/main.cf5b508a.chunk.css.map",
+    "static/js/2.1a83e16e.chunk.js.LICENSE.txt": "/sudoku-solving-visualizer/static/js/2.1a83e16e.chunk.js.LICENSE.txt",
+    "static/media/star.97f0a112.svg": "/sudoku-solving-visualizer/static/media/star.97f0a112.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.08092421.js",
+    "static/js/2.1a83e16e.chunk.js",
+    "static/css/main.cf5b508a.chunk.css",
+    "static/js/main.c1519ca4.chunk.js"
+  ]
+}
